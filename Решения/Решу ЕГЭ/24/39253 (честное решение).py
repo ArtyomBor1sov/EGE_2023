@@ -11,9 +11,9 @@ for i in range(len(stroka)):
         if count_D == 0:
             count_D += 1
         else:
-            maximum = max(finish - start, maximum)
-            start = prev_D
+            maximum = max(finish - start + 1, maximum)
+            start = prev_D + 1
         finish = i
         prev_D = i
-maximum = max(finish - start, maximum)
+maximum = max(finish - start + 1, maximum)
 print(maximum)
