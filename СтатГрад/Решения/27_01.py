@@ -11,11 +11,11 @@ for line in f:
     data[ostatok][degree] += 1
 counter = 0
 for i in range(11):
-    for j in range(11):
+    for j in range(i, 11):
         if (i + j) >= 10:
             if i < j:
                 counter += data[0][i] * data[0][j] + data[1][i] * data[2][j] + data[2][i] * data[1][j]
-            elif i == j:
+            else:
                 counter += data[0][i] * (data[0][i] - 1) // 2 + data[1][i] * data[2][i]
 print(counter)
 
@@ -32,10 +32,10 @@ for line in f:
     data[ostatok][degree] += 1
 counter = 0
 for i in range(11):
-    for j in range(11):
+    for j in range(i, 11):
         if (i + j) >= 10:
             if i < j:
                 counter += data[0][i] * data[0][j] + data[1][i] * data[2][j] + data[2][i] * data[1][j]
-            elif i == j:
+            else:
                 counter += data[0][i] * (data[0][i] - 1) // 2 + data[1][i] * data[2][i]
 print(counter)

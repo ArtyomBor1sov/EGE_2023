@@ -1,4 +1,6 @@
-def make_nums(num):
+from functools import lru_cache
+
+def moves(num):
     nums = []
     if (num + 1) % 3 != 0:
         nums.append(num + 1)
@@ -8,38 +10,19 @@ def make_nums(num):
         nums.append(num * 2)
     return nums
 
-def is_OK(num, turn):
-    nums = make_nums(num)
-    if turn == 1:
-        next_results = []
-        for i in nums:
-            if i >= 151 or not is_OK(i,turn + 1):
-                return False
-            for j in make_nums(i):
-                if j >= 151:
-                    next_results.append(True)
-                    break
-            else:
-                next_results.append(False)
-        if not any(next_results) or all(next_results):
-            return False
-        return True
-    elif turn == 2:
-        for i in nums:
-            if i >= 151 or is_OK(i, turn + 1):
-                return True
-        return False
-    elif turn == 3:
-        for i in nums:
-            if i >= 151 or not is_OK(i, turn + 1):
-                return False
-        return True
-    else:
-        for i in nums:
-            if i >= 151:
-                return True
-        return False
+@lru_cache(None)
+def game(num):
+    if num >= 151:
+        return 'W'
+    if any(game(i) == 'W' for i in moves(num)):
+        return 'П1'
+    if all(game(i) == 'П1' for i in moves(num)):
+        return 'В1'
+    if any(game(i) == 'В1' for i in moves(num)):
+        return 'П2'
+    if all(game(i) == 'П1' or game(i) == 'П2' for i in moves(num)):
+        return 'В2'
 
 for S in range(1, 150):
-    if S % 3 != 0 and is_OK(S, 1):
+    if S % 3 != 0 and game(S) == 'В2':
         print(S)
