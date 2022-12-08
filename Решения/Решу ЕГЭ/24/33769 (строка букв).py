@@ -9,4 +9,4 @@ max_ind = 0
 for i in range(len(counter)):
     if counter[i] > counter[max_ind]:
         max_ind = i
-print(chr(ord('A') + max_ind))
+print(letters[max_ind])
