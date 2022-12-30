@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6587cdf1-78a5-4399-9f19-7589f4d44d4b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/files/03.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/files/09.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/files/17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/files/18.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/files/22.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/files/24.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/files/26.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/files/27-A.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/files/27-B.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/files/Мастер и Маргарита.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Вариант №1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Вариант №2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Ответы.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Ответы.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/01_01.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/01_02.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/02_01.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/02_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/02_02.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/02_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/03_01.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/03_02.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/04_01.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/04_02.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/05_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/05_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/06_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/06_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/07_01.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/07_02.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/08_01.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/08_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/08_02.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/08_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/09_01.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/09_02.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/11_01.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/11_02.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/12_01.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/12_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/12_02.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/12_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/13_01.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/13_02.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/14_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/14_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/15_01.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/15_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/15_02.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/15_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/16_01.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/16_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/16_02.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/16_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/17_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/17_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/18_01.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/18_02.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/19_01.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/19_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/19_02.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/19_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/20_01.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/20_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/20_02.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/20_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/21_01.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/21_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/21_02.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/21_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/22_01.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/22_02.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/23_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/23_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/24_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/24_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/25_01 (читерство).py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/25_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/25_02 (читерство).py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/25_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/26_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/26_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/27_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/СтатГрад/Октябрь 2022/Решения/27_02.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IgLRPk4sWmzpGKtKbggJLJwu2R" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\79686\Desktop\EGE_2023" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.47210">
+    <configuration name="29672" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="EGE_2023" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/29672.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="33196 (строка букв)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="EGE_2023" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\79686\Desktop\EGE_2023\33196 (строка букв).py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="33196 (коды символов)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="EGE_2023" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/33196 (коды символов).py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="33196 (словарь)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="EGE_2023" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/33196 (словарь).py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="35482" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="EGE_2023" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/35482.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="47210" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="EGE_2023" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/47210.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.47210" />
+        <item itemvalue="Python.35482" />
+        <item itemvalue="Python.33196 (словарь)" />
+        <item itemvalue="Python.33196 (строка букв)" />
+        <item itemvalue="Python.29672" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6587cdf1-78a5-4399-9f19-7589f4d44d4b" name="Changes" comment="" />
+      <created>1670598275501</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670598275501</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
