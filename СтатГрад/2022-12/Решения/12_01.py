@@ -1,10 +1,11 @@
+from itertools import *
+
 minimum = 10 ** 12
-for num in range(2 ** 20):
-    stroka = bin(num)[2:]
-    stroka = '0' * (20 - len(stroka)) + stroka
-    if stroka.count('0') == 10:
-        stroka = stroka.replace('1', '2')
-        stroka = stroka.replace('0', '1')
+for element in product('12', repeat = 20):
+    if element.count('1') == 10:
+        stroka = ''
+        for symbol in element:
+            stroka += symbol
         stroka = '0' + stroka + '0'
         while '00' not in stroka:
             stroka = stroka.replace('012', '30', 1)
