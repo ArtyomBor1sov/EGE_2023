@@ -363,9 +363,14 @@ print(counter)
 
 **Ответ:** ТМТС
 
-ЗАДАЧА ПРО АБРАКАДАБРУ
+[**_Число сочетаний_**](https://www.yaklass.ru/p/algebra/11-klass/nachalnye-svedeniia-kombinatoriki-9340/sochetaniia-i-ikh-svoistva-9344/re-9772d3f7-98a3-4363-a771-70d1e2306dc8)
 
-**ВАЖНО!** [**_Число сочетаний_**](https://www.yaklass.ru/p/algebra/11-klass/nachalnye-svedeniia-kombinatoriki-9340/sochetaniia-i-ikh-svoistva-9344/re-9772d3f7-98a3-4363-a771-70d1e2306dc8)
+[**_Сайт Константина Полякова - №1961_**](https://kpolyakov.spb.ru/school/ege/gen.php?action=viewTopic&topicId=1961)
+
+Воспользуемся формулой для вычисления числа сочетаний. Есть 35 способов расставить буквы А и для каждого из них есть
+4 способа расставить буквы Т. 35 * 4 = 140
+
+**Ответ:** 140
 
 ## №9 - Работа с таблицами
 
@@ -510,6 +515,32 @@ print(minimum)
 
 ## №14 - Кодирование чисел. Системы счисления
 
+### Примеры
+
+[**_РешуЕГЭ - №48384_**](https://inf-ege.sdamgia.ru/problem?id=48384)
+
+```python
+minimum = 10 ** 12
+for x in range(9):
+    for y in range(9):
+        result = (8 * 9 ** 4) + (8 * 9 ** 3) + (x * 9 ** 2) + (4 * 9) + y + (7 * 11 ** 4) + (x * 11 ** 3) + (4 * 11 ** 2) + (4 * 11) + y
+        if result % 61 == 0:
+            minimum = min(result, minimum)
+print(minimum // 61)
+```
+
+**Ответ:** 2715
+
+[**_РешуЕГЭ - №8664_**](https://inf-ege.sdamgia.ru/problem?id=8664)
+
+```python
+num = 8 ** 2020 + 4 ** 2017 + 26 - 1
+stroka = bin(num)[2:]
+print(stroka.count('1'))
+```
+
+**Ответ:** 5
+
 ## №15 - Преобразование логических выражений
 
 4 ВАРИАНТА ЗАДАЧ
@@ -592,15 +623,196 @@ print(counter, maximum)
 
 ## №19 - Теория игр. Задание 1
 
-РЕШЕНИЕ РУКАМИИ НА ОБЕ КУЧИ
+### Примеры
+
+[**_Сайт Константина Полякова - №5376_**](https://kpolyakov.spb.ru/school/ege/gen.php?action=viewTopic&topicId=5376)
+
+```python
+from functools import lru_cache
+
+def moves(num_1, num_2):
+    return [(num_1 + 1, num_2), (num_1, num_2 + 1), (num_1 * 2, num_2), (num_1, num_2 * 2)]
+
+@lru_cache(None)
+def game(num_1, num_2):
+    if num_1 + num_2 >= 259:
+        return 'W'
+    if any(game(i, j) == 'W' for i, j in moves(num_1, num_2)):
+        return 'W1'
+    if any(game(i, j) == 'W1' for i, j in moves(num_1, num_2)):
+        return 'L1'
+
+for S in range(1, 242):
+    if game(17, S) == 'L1':
+        print(S)
+        break
+```
+
+**Ответ:** 61
+
+[**_Сайт Константина Полякова - №3489_**](https://kpolyakov.spb.ru/school/ege/gen.php?action=viewTopic&topicId=3489)
+
+```python
+from functools import lru_cache
+
+def moves(num_1, num_2):
+    result = []
+    if num_1 > 0:
+        result.append((num_1 - 1, num_2))
+        result.append(((num_1 - (num_1 % 2)) // 2, num_2))
+    if num_2 > 0:
+        result.append((num_1, num_2 - 1))
+        result.append((num_1, (num_2 - (num_2 % 2)) // 2))
+    return result
+
+@lru_cache(None)
+def game(num_1, num_2):
+    if num_1 + num_2 <= 18:
+        return 'W'
+    if any(game(i, j) == 'W' for i, j in moves(num_1, num_2)):
+        return 'W1'
+    if all(game(i, j) == 'W1' for i, j in moves(num_1, num_2)):
+        return 'L1'
+
+for M in range(10, 100):
+    if game(M, M) == 'L1':
+        print(M)
+        break
+```
+
+**Ответ:** 13
 
 ## №20 - Теория игр. Задание 2
 
-РУКАМИ НА 1 КУЧУ И EXCEL НА 2 КУЧИ
+### Примеры
+
+[**_Сайт Константина Полякова - №5376_**](https://kpolyakov.spb.ru/school/ege/gen.php?action=viewTopic&topicId=5376)
+
+```python
+from functools import lru_cache
+
+def moves(num_1, num_2):
+    return [(num_1 + 1, num_2), (num_1, num_2 + 1), (num_1 * 2, num_2), (num_1, num_2 * 2)]
+
+@lru_cache(None)
+def game(num_1, num_2):
+    if num_1 + num_2 >= 259:
+        return 'W'
+    if any(game(i, j) == 'W' for i, j in moves(num_1, num_2)):
+        return 'W1'
+    if all(game(i, j) == 'W1' for i, j in moves(num_1, num_2)):
+        return 'L1'
+    if any(game(i, j) == 'L1' for i, j in moves(num_1, num_2)):
+        return 'W2'
+
+for S in range(1, 242):
+    if game(17, S) == 'W2':
+        print(S)
+```
+
+**Ответ:** 112 120
+
+[**_Сайт Константина Полякова - №3489_**](https://kpolyakov.spb.ru/school/ege/gen.php?action=viewTopic&topicId=3489)
+
+```python
+from functools import lru_cache
+
+def moves(num_1, num_2):
+    result = []
+    if num_1 > 0:
+        result.append((num_1 - 1, num_2))
+        result.append(((num_1 - (num_1 % 2)) // 2, num_2))
+    if num_2 > 0:
+        result.append((num_1, num_2 - 1))
+        result.append((num_1, (num_2 - (num_2 % 2)) // 2))
+    return result
+
+@lru_cache(None)
+def game(num_1, num_2):
+    if num_1 + num_2 <= 18:
+        return 'W'
+    if any(game(i, j) == 'W' for i, j in moves(num_1, num_2)):
+        return 'W1'
+    if all(game(i, j) == 'W1' for i, j in moves(num_1, num_2)):
+        return 'L1'
+    if any(game(i, j) == 'L1' for i, j in moves(num_1, num_2)):
+        return 'W2'
+
+for S in range(6, 100):
+    if game(13, S) == 'W2':
+        print(S)
+```
+
+**Ответ:** 14 27
 
 ## №21 - Теория игр. Задание 3
 
-РУКАМИ НА 1 КУЧУ И ПИТОН ДВУМЯ СПОСОБАМИ НА 2 КУЧИ
+### Примеры
+
+[**_Сайт Константина Полякова - №5376_**](https://kpolyakov.spb.ru/school/ege/gen.php?action=viewTopic&topicId=5376)
+
+```python
+from functools import lru_cache
+
+def moves(num_1, num_2):
+    return [(num_1 + 1, num_2), (num_1, num_2 + 1), (num_1 * 2, num_2), (num_1, num_2 * 2)]
+
+@lru_cache(None)
+def game(num_1, num_2):
+    if num_1 + num_2 >= 259:
+        return 'W'
+    if any(game(i, j) == 'W' for i, j in moves(num_1, num_2)):
+        return 'W1'
+    if all(game(i, j) == 'W1' for i, j in moves(num_1, num_2)):
+        return 'L1'
+    if any(game(i, j) == 'L1' for i, j in moves(num_1, num_2)):
+        return 'W2'
+    if all(game(i, j) == 'W1' or game(i, j) == 'W2' for i, j in moves(num_1, num_2)):
+        return 'L2'
+
+for S in range(1, 242):
+    if game(17, S) == 'L2':
+        print(S)
+        break
+```
+
+**Ответ:** 111
+
+[**_Сайт Константина Полякова - №3489_**](https://kpolyakov.spb.ru/school/ege/gen.php?action=viewTopic&topicId=3489)
+
+```python
+from functools import lru_cache
+
+def moves(num_1, num_2):
+    result = []
+    if num_1 > 0:
+        result.append((num_1 - 1, num_2))
+        result.append(((num_1 - (num_1 % 2)) // 2, num_2))
+    if num_2 > 0:
+        result.append((num_1, num_2 - 1))
+        result.append((num_1, (num_2 - (num_2 % 2)) // 2))
+    return result
+
+@lru_cache(None)
+def game(num_1, num_2):
+    if num_1 + num_2 <= 18:
+        return 'W'
+    if any(game(i, j) == 'W' for i, j in moves(num_1, num_2)):
+        return 'W1'
+    if all(game(i, j) == 'W1' for i, j in moves(num_1, num_2)):
+        return 'L1'
+    if any(game(i, j) == 'L1' for i, j in moves(num_1, num_2)):
+        return 'W2'
+    if all(game(i, j) == 'W1' or game(i, j) == 'W2' for i, j in moves(num_1, num_2)):
+        return 'L2'
+
+for N in range(10, 100):
+    if game(N, N) == 'L2':
+        print(N)
+        break
+```
+
+**Ответ:** 14
 
 ## №22 - Многопроцессорные системы
 
