@@ -431,55 +431,8 @@ print(summa)
 
 **Ответ:** 138
 
-[**_СтатГрад (октябрь 2022) - №12_**](СтатГрад/2022-10/Вариант%20№1.pdf)
-
-Однако бывают случаи, когда строка не дана, но порядок символов влияет на итоговый ответ. Пусть k1 раз выполняется
-команда 1, k2 раз - команда 2 и тд. Получаем систему уравнений, которую можно решить с помощью Python
-
-![**_СтатГрад (октябрь 2022) - №12 - Решение_**](img/12_01.jpg)
-
-```python
-minimum = 10 ** 12
-for k1 in range(81):
-    for k2 in range(81):
-        for k3 in range(81):
-            for k4 in range(81):
-                if 2 * k1 + k3 == 2 * k2 + k4 and k2 + 2 * k4 == 40 and k1 + 2 * k3 > 50:
-                    minimum = min(k1 + 2 * k3, minimum)
-print(minimum)
-```
-
-**Ответ:** 52
-
-[**_СтатГрад (декабрь 2022) - №12_**](СтатГрад/2022-12/Вариант%20№1.pdf)
-
-В тех случаях, когда исходная строка неизвестна и порядок цифр влияет на итоговый результат, можно перебрать все
-подходящие строки (в адекватных пределах)
-
-```python
-from itertools import *
-
-minimum = 10 ** 12
-for element in product('12', repeat = 20):
-    if element.count('1') == 10:
-        stroka = ''
-        for symbol in element:
-            stroka += symbol
-        stroka = '0' + stroka + '0'
-        while '00' not in stroka:
-            stroka = stroka.replace('012', '30', 1)
-            if '011' in stroka:
-                stroka = stroka.replace('011', '20', 1)
-                stroka = stroka.replace('022', '40', 1)
-            else:
-                stroka = stroka.replace('01', '10', 1)
-                stroka = stroka.replace('02', '101', 1)
-        if stroka.count('1') == 7 and stroka.count('2') == 5 and stroka.count('3') < minimum:
-            minimum = stroka.count('3')
-print(minimum)
-```
-
-**Ответ:** 52
+**_В тех случаях, когда исходная строка неизвестна и порядок цифр влияет на итоговый результат, можно перебрать все
+подходящие строки (в адекватных пределах)_**
 
 ## №13 - Поиск путей в графе
 
