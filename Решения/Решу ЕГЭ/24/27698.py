@@ -1,15 +1,15 @@
 f = open('files/27698.txt', 'r')
-stroka = f.readline()
+line = f.readline()
 counter = 0
 maximum = 0
-for i in range(len(stroka)):
-    if stroka[i] == 'R':
+for symbol in line:
+    if symbol == 'R':
         counter += 1
-    else:
         maximum = max(counter, maximum)
+    else:
         counter = 0
-maximum = max(counter, maximum)
 print(maximum)
-#ПРОВЕРКА
-print(stroka.count('R' * 1))
-print(stroka.count('R' * 2))
+
+# ПРОВЕРКА
+# print(line.count('R' * 1))
+# print(line.count('R' * 2))

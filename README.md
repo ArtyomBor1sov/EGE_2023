@@ -245,7 +245,7 @@ done()
 
 В заданиях с большим ответом будет проблематично считать точки самостоятельно - необходимо видоизменить программу.
 
-[**_Функция find_overlapping_**](https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/canvas-methods.html)
+[**_Метод find_overlapping_**](https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/canvas-methods.html)
 
 ```python
 from turtle import *
@@ -276,7 +276,11 @@ done()
 **Ответ:** 149
 
 **_При автоматическом подсчете необходимо указывать большой масштаб и количество итераций цикла, необходимое для
-завершения фигуры_**
+завершения фигуры - лишние итерации не нужны_**
+
+**_Обратите внимание на то, что библиотека Turtle использует привычную нам систему координат (ось X направлена вправо, 
+ось Y - вверх), но find_overlapping является методом canvas (холста), а в canvas система координат устроена по-другому
+(ось X - вправо, ось Y - вниз). Учитывайте это при выборе диапазона значений для X и Y!_**
 
 ## №7 - Кодирование и декодирование информации. Передача информации
 
@@ -442,6 +446,36 @@ for k1 in range(81):
             for k4 in range(81):
                 if 2 * k1 + k3 == 2 * k2 + k4 and k2 + 2 * k4 == 40 and k1 + 2 * k3 > 50:
                     minimum = min(k1 + 2 * k3, minimum)
+print(minimum)
+```
+
+**Ответ:** 52
+
+[**_СтатГрад (декабрь 2022) - №12_**](СтатГрад/2022-12/Вариант%20№1.pdf)
+
+В тех случаях, когда исходная строка неизвестна и порядок цифр влияет на итоговый результат, можно перебрать все
+подходящие строки (в адекватных пределах)
+
+```python
+from itertools import *
+
+minimum = 10 ** 12
+for element in product('12', repeat = 20):
+    if element.count('1') == 10:
+        stroka = ''
+        for symbol in element:
+            stroka += symbol
+        stroka = '0' + stroka + '0'
+        while '00' not in stroka:
+            stroka = stroka.replace('012', '30', 1)
+            if '011' in stroka:
+                stroka = stroka.replace('011', '20', 1)
+                stroka = stroka.replace('022', '40', 1)
+            else:
+                stroka = stroka.replace('01', '10', 1)
+                stroka = stroka.replace('02', '101', 1)
+        if stroka.count('1') == 7 and stroka.count('2') == 5 and stroka.count('3') < minimum:
+            minimum = stroka.count('3')
 print(minimum)
 ```
 
@@ -818,16 +852,556 @@ for N in range(10, 100):
 
 ## №23 - Поиск количества программ
 
-ПРОГА И НАПИСАТЬ ПОЧЕМУ НЕ ЧЕРЕЗ ФУНКЦИЮ
+### Примеры
 
-ПРОГА С ПУТЯМИ
+[**_РешуЕГЭ - №15932_**](https://inf-ege.sdamgia.ru/problem?id=15932)
 
-ПРОГА С ПРОГРАММАМИ
+```python
+data = [0] * 45
+data[2] = 1
+for i in range(3, 14):
+    data[i] = data[i - 1]
+    if i % 2 == 0 and i // 2 >= 2:
+        data[i] += data[i // 2]
+    if i % 3 == 0 and i // 3 >= 2:
+        data[i] += data[i // 3]
+for i in range(14, 45):
+    if i != 29:
+        data[i] = data[i - 1]
+        if i % 2 == 0 and i // 2 >= 13:
+            data[i] += data[i // 2]
+        if i % 3 == 0 and i // 3 >= 13:
+            data[i] += data[i // 3]
+print(data[44])
+```
+
+**Ответ:** 150
+
+[**_Сайт Константина Полякова - №5543_**](https://kpolyakov.spb.ru/school/ege/gen.php?action=viewTopic&topicId=5543)
+
+В задачах подобного типа необходимо знать не только количество программ, но и траектории вычисления, соответствующие
+этим программам. Для решения можно написать подобную программу, но этот алгоритм далеко не самый оптимальный
+
+```python
+data = [[] for i in range(601)]
+data[1].append([[1], True])
+for i in range(2, 601):
+    if i - 2 >= 1:
+        for way, statement in data[i - 2]:
+            new_way = way.copy()
+            new_way.append(i)
+            if len(new_way) >= 2 and new_way[-2] % 2 != 0 and new_way[-1] % 2 != 0:
+                statement = False
+            data[i].append([new_way, statement])
+    if i % 3 == 0 and i // 3 >= 1:
+        for way, statement in data[i // 3]:
+            new_way = way.copy()
+            new_way.append(i)
+            if len(new_way) >= 2 and new_way[-2] % 2 != 0 and new_way[-1] % 2 != 0:
+                statement = False
+            data[i].append([new_way, statement])
+    if i % 4 == 0 and i // 4 >= 1:
+        for way, statement in data[i // 4]:
+            new_way = way.copy()
+            new_way.append(i)
+            if len(new_way) >= 2 and new_way[-2] % 2 != 0 and new_way[-1] % 2 != 0:
+                statement = False
+            data[i].append([new_way, statement])
+counter = 0
+for way, statement in data[600]:
+    if statement:
+        counter += 1
+print(counter)
+```
+
+Первым числом в каждой траектории вычисления является 1. Следующее число должно быть четным, единственный вариант - 4.
+Можно заметить, что с помощью любой команды из четного числа может получиться только четное число, а это значит, что
+можно использовать любую последовательность команд. Таким образом, для решения данной задачи достаточно посчитать
+количество путей из 4 в 600.
+
+**Ответ:** 20375
 
 ## №24 - Обработка символьных строк
 
+### Примеры
+
+[**_РешуЕГЭ - №27421_**](https://inf-ege.sdamgia.ru/problem?id=27421)
+
+```python
+f = open('files/27421.txt', 'r')
+line = f.readline()
+counter = 1
+maximum = 1
+for i in range(1, len(line)):
+    if line[i] != line[i - 1]:
+        counter += 1
+        maximum = max(counter, maximum)
+    else:
+        counter = 1
+print(maximum)
+```
+
+**Ответ:** 35
+
+[**_РешуЕГЭ - №27686_**](https://inf-ege.sdamgia.ru/problem?id=27686)
+
+```python
+f = open('files/27686.txt', 'r')
+line = f.readline()
+counter = 0
+maximum = 0
+for symbol in line:
+    if symbol == 'X':
+        counter += 1
+        maximum = max(counter, maximum)
+    else:
+        counter = 0
+print(maximum)
+
+# ПРОВЕРКА
+# print(line.count('X' * 19))
+# print(line.count('X' * 20))
+```
+
+**Ответ:** 19
+
+[**_РешуЕГЭ - №27689_**](https://inf-ege.sdamgia.ru/problem?id=27689)
+
+```python
+f = open('files/27689.txt', 'r')
+line = f.readline()
+counter = 0
+maximum = 0
+for symbol in line:
+    if ((symbol == 'X' and counter % 3 == 0) or
+        (symbol == 'Y' and counter % 3 == 1) or
+        (symbol == 'Z' and counter % 3 == 2)):
+        counter += 1
+        maximum = max(counter, maximum)
+    else:
+        if symbol == 'X':
+            counter = 1
+        else:
+            counter = 0
+print(maximum)
+
+# ПРОВЕРКА
+# print(line.count('XYZ' * 4 + 'X'))
+# print(line.count('XYZ' * 4 + 'XY'))
+```
+
+**Ответ:** 15
+
+[**_РешуЕГЭ - №33103_**](https://inf-ege.sdamgia.ru/problem?id=33103)
+
+```python
+f = open('files/33103.txt', 'r')
+counter = 0
+for line in f:
+    if line.count('A') > line.count('E'):
+        counter += 1
+print(counter)
+```
+
+**Ответ:** 485
+
+[**_РешуЕГЭ - №33526_**](https://inf-ege.sdamgia.ru/problem?id=33526)
+
+```python
+f = open('files/33526.txt', 'r')
+line = f.readline()
+counter = {}
+for i in range(1, len(line) - 1):
+    if line[i - 1] == line[i + 1]:
+        counter[line[i]] = counter.get(line[i], 0) + 1
+maximum = 0
+for key, val in counter.items():
+    if val > maximum:
+        maximum = val
+        max_letter = key
+print (max_letter)
+
+# f = open('files/33526.txt', 'r')
+# line = f.readline()
+# counter = [0] * 26
+# for i in range(1, len(line) - 1):
+#     if line[i - 1] == line[i + 1]:
+#         counter[ord(line[i]) - ord('A')] += 1
+# max_ind = 0
+# for i in range(len(counter)):
+#     if counter[i] > counter[max_ind]:
+#         max_ind = i
+# print(chr(ord('A') + max_ind))
+
+# f = open('files/33526.txt', 'r')
+# line = f.readline()
+# letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+# counter = [0] * 26
+# for i in range(1, len(line) - 1):
+#     if line[i - 1] == line[i + 1]:
+#         counter[letters.find(line[i])] += 1
+# max_ind = 0
+# for i in range(len(counter)):
+#     if counter[i] > counter[max_ind]:
+#         max_ind = i
+# print(letters[max_ind])
+```
+
+**Ответ:** D
+
+[**_РешуЕГЭ - №35482_**](https://inf-ege.sdamgia.ru/problem?id=35482)
+
+```python
+f = open('files/35482.txt', 'r')
+minimum = 10 ** 12
+for line in f:
+    if line.count('G') < minimum:
+        minimum = line.count('G')
+        min_line = line
+maximum = 0
+for code in range(ord('A'), ord('Z') + 1):
+    if min_line.count(chr(code)) >= maximum:
+        maximum = min_line.count(chr(code))
+        max_letter = chr(code)
+print(max_letter)
+```
+
+**Ответ:** T
+
+[**_РешуЕГЭ - №35998_**](https://inf-ege.sdamgia.ru/problem?id=35998)
+
+```python
+f = open('files/35998.txt', 'r')
+maximum = 0
+for line in f:
+    if line.count('A') < 25:
+        for code in range(ord('A'), ord('Z') + 1):
+            maximum = max(line.rfind(chr(code)) - line.find(chr(code)), maximum)
+print(maximum)
+```
+
+**Ответ:** 1004
+
+[**_РешуЕГЭ - №47228_**](https://inf-ege.sdamgia.ru/problem?id=47228)
+
+```python
+f = open('files/47228.txt', 'r')
+line = f.readline()
+counter = 0
+maximum = 0
+i = 0
+while i < len(line):
+    if line[i] in 'CDF' and line[i + 1] in 'AO':
+        counter += 1
+        maximum = max(counter, maximum)
+        i += 2
+    else:
+        counter = 0
+        i += 1
+print(maximum)
+```
+
+**Ответ:** 95
+
 ## №25 - Обработка целочисленной информации
+
+### Примеры
+
+[**_РешуЕГЭ - №27422_**](https://inf-ege.sdamgia.ru/problem?id=27422)
+
+```python
+for num in range(174457, 174506):
+    divs = []
+    for div in range(2, int(num ** 0.5) + 1):
+        if num % div == 0:
+            divs.append(div)
+            if div != num // div:
+                divs.append(num // div)
+            if len(divs) > 2:
+                break
+    if len(divs) == 2:
+        print(divs)
+```
+
+**Ответ:**  
+3 58153  
+7 24923  
+59 2957  
+13 13421  
+149 1171  
+5 34897  
+211 827  
+2 87251
+
+[**_РешуЕГЭ - №27850_**](https://inf-ege.sdamgia.ru/problem?id=27850)
+
+```python
+for num in range(245690, 245757):
+    counter = 0
+    for div in range(2, num):
+        if num % div == 0:
+            counter += 1
+            break
+    if counter == 0:
+        print(num - 245689, num)
+```
+
+**Ответ:**  
+22 245711  
+30 245719  
+34 245723  
+52 245741  
+58 245747  
+64 245753  
+
+[**_РешуЕГЭ - №29673_**](https://inf-ege.sdamgia.ru/problem?id=29673)
+
+**_Нечетное количество делителей <=> Корень числа - целое число_**
+
+```python
+for root in range(11112, 14949):
+    num = root ** 2
+    divs = [root]
+    for div in range(2, root):
+        if num % div == 0:
+            divs.append(div)
+            divs.append(num // div)
+            if len(divs) > 3:
+                break
+    if len(divs) == 3:
+        print(num, max(divs))
+```
+
+**Ответ:**  
+131079601 1225043  
+141158161 1295029  
+163047361 1442897
+
+[**_РешуЕГЭ - №33197_**](https://inf-ege.sdamgia.ru/problem?id=33197)
+
+```python
+for num in range(1000000, 2000001):
+    counter = 0
+    for div in range(int(num ** 0.5), 949, -1):
+        if num % div == 0:
+            if num // div - div <= 100:
+                counter += 1
+            else:
+                break
+    if counter >= 3:
+        print(num)
+```
+
+**Ответ:**  
+1113840  
+1179360  
+1208844  
+1499400
+
+[**_РешуЕГЭ - №33527_**](https://inf-ege.sdamgia.ru/problem?id=33527)
+
+```python
+# 2^1 * x^1 - 2 четных делителя
+# 2^1 * x^2 - 3 четных делителя
+# 2^1 * x^1 * y^1 - 4 четных делителя
+# 2^2 * x^1 - 4 четных делителя
+# 2^3 - 3 четных делителя
+
+# 101000000 <= 2^1 * x^2 <= 102000000
+# 50500000 <= x^2 <= 51000000
+# 7107 <= x <= 7141
+
+for num in range(7107, 7142):
+    counter = 0
+    for div in range(2, int(num ** 0.5) + 1):
+        if num % div == 0:
+            counter += 1
+            break
+    if counter == 0:
+        print(2 * (num ** 2))
+```
+
+**Ответ:**  
+101075762  
+101417282  
+101588258  
+101645282
+
+[**_РешуЕГЭ - №35483_**](https://inf-ege.sdamgia.ru/problem?id=35483)
+
+```python
+# 2^K - 1 нечетный делитель
+# 2^K * x^1 - 2 нечетных делителя
+# 2^K * x^2 - 3 нечетных делителя
+# 2^K * x^3 - 4 нечетных делителя
+# 2^K * x^4 - 5 нечетных делителей
+# 2^K * x^1 * y^1 - 4 нечетных делителя
+# 2^K * x^2 * y^1 - 6 нечетных делителей
+# 2^K * x^1 * y^1 * z^1 - 8 нечетных делителей
+
+# 35000000 <= 2^K * x^4 <= 40000000
+# x^4 <= 40000000
+# x <= 79
+
+def is_prime(num):
+    answer = True
+    for div in range(2, int(num ** 0.5) + 1):
+        if num % div == 0:
+            answer = False
+            break
+    return answer
+
+answer = []
+for num in range(2, 80):
+    if is_prime(num):
+        mult = 1
+        while mult * num ** 4 <= 40000000:
+            if 35000000 <= mult * num ** 4 <= 40000000:
+                answer.append(mult * num ** 4)
+            mult *= 2
+answer.sort()
+print(answer)
+```
+
+**Ответ:**  
+35819648  
+38950081  
+39037448  
+39337984
+
+[**_РешуЕГЭ - №35999_**](https://inf-ege.sdamgia.ru/problem?id=35999)
+
+```python
+# 2^m <= 400000000 => m = [0, 28]
+# 3^n <= 400000000 => n = [1, 17]
+
+answer = []
+for m in range(0, 29, 2):
+    for n in range(1, 18, 2):
+        if 200000000 <= 2 ** m * 3 ** n <= 400000000:
+            answer.append(2 ** m * 3 ** n)
+answer.sort()
+print(answer)
+```
+
+**Ответ:**  
+201326592  
+229582512  
+254803968  
+322486272
+
+[**_РешуЕГЭ - №45259_**](https://inf-ege.sdamgia.ru/problem?id=45259)
+
+```python
+for i in range(10):
+    for j in range(10):
+        num = int('12345' + str(i) + '7' + str(j) + '8')
+        if num % 23 == 0:
+            print(num, num // 23)
+```
+
+**Ответ:**  
+123450798 5367426  
+123451718 5367466  
+123453788 5367556  
+123454708 5367596  
+123456778 5367686  
+123459768 5367816
+
+[**_РешуЕГЭ - №46983_**](https://inf-ege.sdamgia.ru/problem?id=46983)
+
+```python
+num = 460000001
+counter = 0
+while counter < 5:
+    divs = []
+    for div in range(1, int(num ** 0.5) + 1):
+        if num % div == 0:
+            divs.append(div)
+            if div != num // div:
+                divs.append(num // div)
+    if len(divs) >= 7:
+        divs.sort()
+        M = divs[-6]
+        print(M)
+        counter += 1
+    num += 1
+```
+
+**Ответ:**  
+41818182  
+261959  
+5  
+271  
+57500001
+
+[**_РешуЕГЭ - №47229_**](https://inf-ege.sdamgia.ru/problem?id=47229)
+
+[**_Библиотека fnmatch_**](https://docs-python.ru/standart-library/modul-fnmatch-python)
+
+```python
+from fnmatch import *
+
+for num in range(0, 10 ** 10 + 1, 2023):
+    if fnmatch(str(num), '1?2139*4'):
+        print(num, num // 2023)
+
+# for num in range(0, 10 ** 10 + 1, 2023):
+#     s = str(num)
+#     if s[0] == '1' and s[2:6] == '2139' and s[-1] == '4':
+#         print(num, num // 2023)
+```
+
+**Ответ:**  
+162139404 80148  
+1321399324 653188  
+1421396214 702618  
+1521393104 752048
 
 ## №26 - Обработка целочисленной информации
 
+### Примеры
+
+[**_РешуЕГЭ - №27423_**](https://inf-ege.sdamgia.ru/problem?id=27423)
+
+[**_РешуЕГЭ - №29674_**](https://inf-ege.sdamgia.ru/problem?id=29674)
+
+[**_РешуЕГЭ - №33198_**](https://inf-ege.sdamgia.ru/problem?id=33198)
+
+[**_РешуЕГЭ - №33528_**](https://inf-ege.sdamgia.ru/problem?id=33528)
+
+[**_РешуЕГЭ - №35484_**](https://inf-ege.sdamgia.ru/problem?id=35484)
+
+[**_РешуЕГЭ - №40742_**](https://inf-ege.sdamgia.ru/problem?id=40742)
+
+[**_РешуЕГЭ - №45260_**](https://inf-ege.sdamgia.ru/problem?id=45260)
+
+[**_РешуЕГЭ - №47023_**](https://inf-ege.sdamgia.ru/problem?id=47023)
+
+[**_РешуЕГЭ - №47230_**](https://inf-ege.sdamgia.ru/problem?id=47230)
+
 ## №27 - Программирование
+
+### Примеры
+
+[**_РешуЕГЭ - №27424_**](https://inf-ege.sdamgia.ru/problem?id=27424)
+
+[**_РешуЕГЭ - №27891_**](https://inf-ege.sdamgia.ru/problem?id=27891)
+
+[**_РешуЕГЭ - №33199_**](https://inf-ege.sdamgia.ru/problem?id=33199)
+
+[**_РешуЕГЭ - №33529_**](https://inf-ege.sdamgia.ru/problem?id=33529)
+
+[**_РешуЕГЭ - №35485_**](https://inf-ege.sdamgia.ru/problem?id=35485)
+
+[**_РешуЕГЭ - №36001_**](https://inf-ege.sdamgia.ru/problem?id=36001)
+
+[**_РешуЕГЭ - №37162_**](https://inf-ege.sdamgia.ru/problem?id=37162)
+
+[**_РешуЕГЭ - №38961_**](https://inf-ege.sdamgia.ru/problem?id=38961)
+
+[**_РешуЕГЭ - №45261_**](https://inf-ege.sdamgia.ru/problem?id=45261)
+
+[**_РешуЕГЭ - №46985_**](https://inf-ege.sdamgia.ru/problem?id=46985)
+
+[**_РешуЕГЭ - №47231_**](https://inf-ege.sdamgia.ru/problem?id=47231)

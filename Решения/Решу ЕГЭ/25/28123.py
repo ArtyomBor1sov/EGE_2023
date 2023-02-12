@@ -1,9 +1,13 @@
-for num in range(125256, 125330):
+for num in range(125256, 125331):
     divs = []
-    for div in range(1, num + 1):
-        if num % div == 0 and div % 2 == 0:
-            divs.append(div)
+    for div in range(1, int(num ** 0.5) + 1):
+        if num % div == 0:
+            if div % 2 == 0:
+                divs.append(div)
+            if div != num // div and (num // div) % 2 == 0:
+                divs.append(num // div)
             if len(divs) > 6:
                 break
     if len(divs) == 6:
-        print(divs[0], divs[1], divs[2], divs[3], divs[4], divs[5])
+        divs.sort()
+        print(divs)

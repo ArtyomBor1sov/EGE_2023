@@ -1,8 +1,9 @@
 from turtle import *
 
 k = 40
-color('black', 'red')
 speed(0)
+left(90)
+color('black', 'red')
 begin_fill()
 for i in range(6):
     forward(5 * k)

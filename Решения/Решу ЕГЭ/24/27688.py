@@ -1,15 +1,15 @@
 f = open('files/27688.txt', 'r')
-stroka = f.readline()
+line = f.readline()
 counter = 0
 maximum = 0
-for i in range(len(stroka)):
-    if stroka[i] == 'Z':
+for symbol in line:
+    if symbol == 'Z':
         counter += 1
-    else:
         maximum = max(counter, maximum)
+    else:
         counter = 0
-maximum = max(counter, maximum)
 print(maximum)
-#ПРОВЕРКА
-print(stroka.count('Z' * 7))
-print(stroka.count('Z' * 8))
+
+# ПРОВЕРКА
+# print(line.count('Z' * 7))
+# print(line.count('Z' * 8))

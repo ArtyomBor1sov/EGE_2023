@@ -1,15 +1,15 @@
 f = open('files/27686.txt', 'r')
-stroka = f.readline()
+line = f.readline()
 counter = 0
 maximum = 0
-for i in range(len(stroka)):
-    if stroka[i] == 'X':
+for symbol in line:
+    if symbol == 'X':
         counter += 1
-    else:
         maximum = max(counter, maximum)
+    else:
         counter = 0
-maximum = max(counter, maximum)
 print(maximum)
-#ПРОВЕРКА
-print(stroka.count('X' * 19))
-print(stroka.count('X' * 20))
+
+# ПРОВЕРКА
+# print(line.count('X' * 19))
+# print(line.count('X' * 20))

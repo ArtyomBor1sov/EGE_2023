@@ -1,12 +1,11 @@
 f = open('files/36037.txt', 'r')
-stroka = f.readline()
+line = f.readline()
 counter = 3
 maximum = 3
-for i in range(3, len(stroka)):
-    if stroka[i] != 'Y' or stroka[i - 3:i] != 'XZZ':
+for i in range(3, len(line)):
+    if line[i] != 'Y' or line[i - 3:i] != 'XZZ':
         counter += 1
-    else:
         maximum = max(counter, maximum)
+    else:
         counter = 3
-maximum = max(counter, maximum)
 print(maximum)
