@@ -1,4 +1,4 @@
-f = open('files/37131.txt', 'r')
+f = open('files/37131.txt')
 line = f.readline()
 line = line.replace('KL', 'K L')
 line = line.replace('LK', 'L K')

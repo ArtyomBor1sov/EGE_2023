@@ -1,4 +1,4 @@
-f = open('files/38602.txt', 'r')
+f = open('files/38602.txt')
 line = f.readline()
 line = line.replace('PP', 'P P')
 parts = line.split()

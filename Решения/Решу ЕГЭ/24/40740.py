@@ -1,4 +1,4 @@
-f = open('files/40740.txt', 'r')
+f = open('files/40740.txt')
 parts = f.readline().split('A')
 maximum = 0
 for element in parts:

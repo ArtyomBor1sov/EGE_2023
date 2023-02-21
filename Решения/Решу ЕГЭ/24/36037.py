@@ -1,11 +1,9 @@
-f = open('files/36037.txt', 'r')
-line = f.readline()
-counter = 3
-maximum = 3
-for i in range(3, len(line)):
-    if line[i] != 'Y' or line[i - 3:i] != 'XZZ':
-        counter += 1
-        maximum = max(counter, maximum)
+f = open('files/36037.txt')
+parts = f.readline().split('XZZY')
+maximum = 0
+for i in range(len(parts)):
+    if i == 0 or i == len(parts) - 1:
+        maximum = max(len(parts[i]) + 3, maximum)
     else:
-        counter = 3
+        maximum = max(len(parts[i]) + 6, maximum)
 print(maximum)

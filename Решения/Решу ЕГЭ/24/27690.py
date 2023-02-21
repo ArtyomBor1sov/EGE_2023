@@ -1,4 +1,4 @@
-f = open('files/27690.txt', 'r')
+f = open('files/27690.txt')
 line = f.readline()
 counter = 1
 maximum = 1

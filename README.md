@@ -109,6 +109,8 @@ x y z w F
 
 **Ответ:** ywzx
 
+## №3
+
 ## №4 - Кодирование и декодирование информации
 
 **_Условие Фано_** - никакое кодовое слово не может быть началом другого кодового слова
@@ -204,7 +206,7 @@ print(maximum)
 
 **Ответ:** 106
 
-## №6 - Определение результатов работы простейших алгоритмов (черепашка)
+## №6 - Определение результатов работы простейших алгоритмов
 
 [**_Библиотека Turtle_**](https://docs.python.org/3/library/turtle.html)
 
@@ -530,8 +532,6 @@ print(stroka.count('1'))
 
 ## №15 - Преобразование логических выражений
 
-4 ВАРИАНТА ЗАДАЧ
-
 ## №16 - Рекурсивные алгоритмы
 
 ### Пример
@@ -590,7 +590,7 @@ for i in range(len(nums)):
     print(nums[i], nums[j], nums[k])
 '''
 
-f = open('37373.txt', 'r')
+f = open('37373.txt')
 nums = []
 for line in f:
     nums.append(int(line))
@@ -615,7 +615,7 @@ print(counter, maximum)
 [**_Сайт Константина Полякова - №5376_**](https://kpolyakov.spb.ru/school/ege/gen.php?action=viewTopic&topicId=5376)
 
 ```python
-from functools import lru_cache
+from functools import *
 
 def moves(num_1, num_2):
     return [(num_1 + 1, num_2), (num_1, num_2 + 1), (num_1 * 2, num_2), (num_1, num_2 * 2)]
@@ -640,7 +640,7 @@ for S in range(1, 242):
 [**_Сайт Константина Полякова - №3489_**](https://kpolyakov.spb.ru/school/ege/gen.php?action=viewTopic&topicId=3489)
 
 ```python
-from functools import lru_cache
+from functools import *
 
 def moves(num_1, num_2):
     result = []
@@ -676,7 +676,7 @@ for M in range(10, 100):
 [**_Сайт Константина Полякова - №5376_**](https://kpolyakov.spb.ru/school/ege/gen.php?action=viewTopic&topicId=5376)
 
 ```python
-from functools import lru_cache
+from functools import *
 
 def moves(num_1, num_2):
     return [(num_1 + 1, num_2), (num_1, num_2 + 1), (num_1 * 2, num_2), (num_1, num_2 * 2)]
@@ -702,7 +702,7 @@ for S in range(1, 242):
 [**_Сайт Константина Полякова - №3489_**](https://kpolyakov.spb.ru/school/ege/gen.php?action=viewTopic&topicId=3489)
 
 ```python
-from functools import lru_cache
+from functools import *
 
 def moves(num_1, num_2):
     result = []
@@ -739,7 +739,7 @@ for S in range(6, 100):
 [**_Сайт Константина Полякова - №5376_**](https://kpolyakov.spb.ru/school/ege/gen.php?action=viewTopic&topicId=5376)
 
 ```python
-from functools import lru_cache
+from functools import *
 
 def moves(num_1, num_2):
     return [(num_1 + 1, num_2), (num_1, num_2 + 1), (num_1 * 2, num_2), (num_1, num_2 * 2)]
@@ -768,7 +768,7 @@ for S in range(1, 242):
 [**_Сайт Константина Полякова - №3489_**](https://kpolyakov.spb.ru/school/ege/gen.php?action=viewTopic&topicId=3489)
 
 ```python
-from functools import lru_cache
+from functools import *
 
 def moves(num_1, num_2):
     result = []
@@ -881,7 +881,7 @@ print(counter)
 [**_РешуЕГЭ - №27421_**](https://inf-ege.sdamgia.ru/problem?id=27421)
 
 ```python
-f = open('files/27421.txt', 'r')
+f = open('files/27421.txt')
 line = f.readline()
 counter = 1
 maximum = 1
@@ -899,7 +899,7 @@ print(maximum)
 [**_РешуЕГЭ - №27686_**](https://inf-ege.sdamgia.ru/problem?id=27686)
 
 ```python
-f = open('files/27686.txt', 'r')
+f = open('files/27686.txt')
 line = f.readline()
 counter = 0
 maximum = 0
@@ -921,7 +921,7 @@ print(maximum)
 [**_РешуЕГЭ - №27689_**](https://inf-ege.sdamgia.ru/problem?id=27689)
 
 ```python
-f = open('files/27689.txt', 'r')
+f = open('files/27689.txt')
 line = f.readline()
 counter = 0
 maximum = 0
@@ -948,7 +948,7 @@ print(maximum)
 [**_РешуЕГЭ - №33103_**](https://inf-ege.sdamgia.ru/problem?id=33103)
 
 ```python
-f = open('files/33103.txt', 'r')
+f = open('files/33103.txt')
 counter = 0
 for line in f:
     if line.count('A') > line.count('E'):
@@ -961,7 +961,7 @@ print(counter)
 [**_РешуЕГЭ - №33526_**](https://inf-ege.sdamgia.ru/problem?id=33526)
 
 ```python
-f = open('files/33526.txt', 'r')
+f = open('files/33526.txt')
 line = f.readline()
 counter = {}
 for i in range(1, len(line) - 1):
@@ -1005,7 +1005,7 @@ print (max_letter)
 [**_РешуЕГЭ - №35482_**](https://inf-ege.sdamgia.ru/problem?id=35482)
 
 ```python
-f = open('files/35482.txt', 'r')
+f = open('files/35482.txt')
 minimum = 10 ** 12
 for line in f:
     if line.count('G') < minimum:
@@ -1024,7 +1024,7 @@ print(max_letter)
 [**_РешуЕГЭ - №35998_**](https://inf-ege.sdamgia.ru/problem?id=35998)
 
 ```python
-f = open('files/35998.txt', 'r')
+f = open('files/35998.txt')
 maximum = 0
 for line in f:
     if line.count('A') < 25:
@@ -1038,7 +1038,7 @@ print(maximum)
 [**_РешуЕГЭ - №47228_**](https://inf-ege.sdamgia.ru/problem?id=47228)
 
 ```python
-f = open('files/47228.txt', 'r')
+f = open('files/47228.txt')
 line = f.readline()
 counter = 0
 maximum = 0
@@ -1317,21 +1317,248 @@ for num in range(0, 10 ** 10 + 1, 2023):
 
 [**_РешуЕГЭ - №27423_**](https://inf-ege.sdamgia.ru/problem?id=27423)
 
+```python
+f = open('files/27423.txt')
+S, N = [int(x) for x in f.readline().split()]
+data = []
+for line in f:
+    data.append(int(line))
+data.sort()
+counter = 0
+for i in range(N):
+    if data[i] <= S:
+        S -= data[i]
+        counter += 1
+    else:
+        break
+for i in range(counter - 1, N):
+    if data[i] - data[counter - 1] <= S:
+        maximum = data[i]
+    else:
+        break
+print(counter, maximum)
+```
+
+**Ответ:** 568 50
+
 [**_РешуЕГЭ - №29674_**](https://inf-ege.sdamgia.ru/problem?id=29674)
+
+```python
+from math import *
+
+f = open('files/29674.txt')
+N = int(f.readline())
+data = []
+summa = 0
+for line in f:
+    if int(line) > 50:
+        data.append(int(line))
+    else:
+        summa += int(line)
+data.sort()
+for i in range(len(data) // 2):
+    summa += data[i] * 0.75
+    maximum = data[i]
+for i in range(len(data) // 2, len(data)):
+    summa += data[i]
+print(ceil(summa), maximum)
+```
+
+**Ответ:** 469784 511
 
 [**_РешуЕГЭ - №33198_**](https://inf-ege.sdamgia.ru/problem?id=33198)
 
+```python
+f = open('files/33198.txt')
+N, M = [int(x) for x in f.readline().split()]
+summa = 0
+counter = 0
+data = []
+for line in f:
+    if 200 <= int(line) <= 210:
+        summa += int(line)
+        counter += 1
+    else:
+        data.append(int(line))
+data.sort()
+for i in range(N):
+    if summa + data[i] <= M:
+        summa += data[i]
+        counter += 1
+    else:
+        break
+end = N
+for i in range(counter - 1, -1, -1):
+    for j in range(i, end):
+        if summa + data[j] - data[i] <= M:
+            end = j
+            diff = data[j] - data[i]
+        else:
+            break
+    summa += diff
+print(counter, summa)
+```
+
+**Ответ:** 123 10000
+
 [**_РешуЕГЭ - №33528_**](https://inf-ege.sdamgia.ru/problem?id=33528)
+
+```python
+f = open('files/33528.txt')
+N, M = [int(x) for x in f.readline().split()]
+data = []
+for line in f:
+    price, amount, kind = line.split()
+    price, amount = int(price), int(amount)
+    if kind == 'A':
+        M -= price * amount
+    else:
+        data.append([price, amount])
+data.sort()
+counter = 0
+for price, amount in data:
+    if price * amount <= M:
+        counter += amount
+        M -= price * amount
+    else:
+        counter += M // price
+        M -= M // price * price
+        break
+print(counter, M)
+```
+
+**Ответ:** 5895 227
 
 [**_РешуЕГЭ - №35484_**](https://inf-ege.sdamgia.ru/problem?id=35484)
 
+```python
+def bin_search(element, array, start, end):
+    if begin > end:
+        return -1
+    mid = (begin + end) // 2
+    if array[mid] == element:
+        return mid
+    if array[mid] > element:
+        return bin_search(element, array, start, mid - 1)
+    if array[mid] < element:
+        return bin_search(element, array, mid + 1, end)
+
+f = open('files/35484.txt')
+N = int(f.readline())
+data = []
+for line in f:
+    data.append(int(line))
+data.sort()
+counter = 0
+maximum = 0
+for i in range(len(data)):
+    for j in range(i + 1, len(data)):
+        if data[i] % 2 == 0 and data[j] % 2 == 0 and bin_search((data[i] + data[j]) // 2, data, i + 1, j - 1) != -1:
+            counter += 1
+            maximum = max((data[i] + data[j]) // 2, maximum)
+print(counter, maximum)
+```
+
+**Ответ:** 15 976339247
+
 [**_РешуЕГЭ - №40742_**](https://inf-ege.sdamgia.ru/problem?id=40742)
+
+```python
+f = open('files/40742.txt')
+N = int(f.readline())
+week_start = 1633305600
+week_end = week_start + 604800
+counter = 0
+data = [0] * 604800
+for line in f:
+    start, end = [int(x) for x in line.split()]
+    if (start < week_start or start == 0) and (end >= week_start or end == 0):
+        counter += 1
+    if week_start <= start < week_end:
+        data[start - week_start] += 1
+    if week_start <= end < week_end:
+        data[end - week_start] -= 1
+maximum = counter
+max_time = 0
+for element in data:
+    counter += element
+    if counter > maximum:
+        maximum = counter
+        max_time = 1
+    elif counter == maximum:
+        max_time += 1
+print(maximum, max_time)
+```
+
+**Ответ:** 5000 46
 
 [**_РешуЕГЭ - №45260_**](https://inf-ege.sdamgia.ru/problem?id=45260)
 
+```python
+f = open('files/45260.txt')
+N = int(f.readline())
+data = []
+for line in f:
+    data.append([int(x) for x in line.split()])
+data.sort()
+max_row = 0
+for i in range(N - 1):
+    if data[i][0] == data[i + 1][0] and data[i + 1][1] - data[i][1] == 14 and data[i][0] > max_row:
+        max_row = data[i][0]
+        min_place = data[i][1] + 1
+print(max_row, min_place)
+```
+
+**Ответ:** 59966 50449
+
 [**_РешуЕГЭ - №47023_**](https://inf-ege.sdamgia.ru/problem?id=47023)
 
+```python
+f = open('files/46984.txt')
+N = int(f.readline())
+data = [[False] * 10000 for i in range(10000)]
+data[0][0] = True
+for line in f:
+    row, place = [int(x) for x in line.split()]
+    data[row - 1][place - 1] = True
+maximum = 0
+for i in range(10000):
+    counter = 0
+    j = 0
+    while j < 10000:
+        if data[i][j] and (counter == 0 or not data[i][j - 1]):
+            counter += 1
+            if counter > maximum:
+                maximum = counter
+                min_row = i + 1
+            j += 2
+        else:
+            counter = 0
+            j += 1
+print(maximum, min_row)
+```
+
+**Ответ:** 9 995
+
 [**_РешуЕГЭ - №47230_**](https://inf-ege.sdamgia.ru/problem?id=47230)
+
+```python
+f = open('files/47230.txt')
+N = int(f.readline())
+data = []
+for line in f:
+    data.append(int(line))
+data.sort(reverse = True)
+counter = 1
+last_box = 0
+for i in range(1, N):
+    if data[last_box] - data[i] >= 3:
+        counter += 1
+        last_box = i
+print(counter, data[last_box])
+```
+
+**Ответ:** 2767 51
 
 ## №27 - Программирование
 
@@ -1339,22 +1566,364 @@ for num in range(0, 10 ** 10 + 1, 2023):
 
 [**_РешуЕГЭ - №27424_**](https://inf-ege.sdamgia.ru/problem?id=27424)
 
+```python
+f = open('files/27424_A.txt')
+N = int(f.readline())
+summa = 0
+min_diff = 10 ** 12
+for line in f:
+    a, b = [int(x) for x in line.split()]
+    summa += max(a, b)
+    if abs(a - b) % 3 != 0:
+        min_diff = min(abs(a - b), min_diff)
+if summa % 3 == 0:
+    summa -= min_diff
+print(summa)
+
+f = open('files/27424_B.txt')
+N = int(f.readline())
+summa = 0
+min_diff = 10 ** 12
+for line in f:
+    a, b = [int(x) for x in line.split()]
+    summa += max(a, b)
+    if abs(a - b) % 3 != 0:
+        min_diff = min(abs(a - b), min_diff)
+if summa % 3 == 0:
+    summa -= min_diff
+print(summa)
+```
+
+**Ответ:** 127127 399762080
+
 [**_РешуЕГЭ - №27891_**](https://inf-ege.sdamgia.ru/problem?id=27891)
+
+```python
+f = open('files/27891_A.txt')
+N = int(f.readline())
+max_14 = 0
+max_7 = 0
+max_2 = 0
+max_1 = [0, 0]
+for line in f:
+    num = int(line)
+    if num % 14 == 0 and num > max_14:
+        max_14 = num
+    elif num % 7 == 0 and num > max_7:
+        max_7 = num
+    elif num % 2 == 0 and num > max_2:
+        max_2 = num
+    if num > max_1[0]:
+        max_1[1] = max_1[0]
+        max_1[0] = num
+    elif num > max_1[1]:
+        max_1[1] = num
+if max_14 != max_1[0]:
+    print(max(max_14 * max_1[0], max_7, max_2))
+else:
+    print(max(max_14 * max_1[1], max_7, max_2))
+
+f = open('files/27891_B.txt')
+N = int(f.readline())
+max_14 = 0
+max_7 = 0
+max_2 = 0
+max_1 = [0, 0]
+for line in f:
+    num = int(line)
+    if num % 14 == 0 and num > max_14:
+        max_14 = num
+    elif num % 7 == 0 and num > max_7:
+        max_7 = num
+    elif num % 2 == 0 and num > max_2:
+        max_2 = num
+    if num > max_1[0]:
+        max_1[1] = max_1[0]
+        max_1[0] = num
+    elif num > max_1[1]:
+        max_1[1] = num
+if max_14 != max_1[0]:
+    print(max(max_14 * max_1[0], max_7, max_2))
+else:
+    print(max(max_14 * max_1[1], max_7, max_2))
+```
+
+**Ответ:** 447552 994000
 
 [**_РешуЕГЭ - №33199_**](https://inf-ege.sdamgia.ru/problem?id=33199)
 
+```python
+f = open('files/33199_A.txt')
+N = int(f.readline())
+summa_1 = 0
+summa_2 = 0
+summa_3 = 0
+min_diff = 10 ** 12
+for line in f:
+    nums = [int(x) for x in line.split()]
+    nums.sort()
+    summa_1 += nums[0]
+    summa_2 += nums[1]
+    summa_3 += nums[2]
+    if (nums[2] - nums[1]) % 2 != 0 and nums[2] - nums[1] < min_diff:
+        min_diff = nums[2] - nums[1]
+    elif (nums[2] - nums[0]) % 2 != 0 and nums[2] - nums[0] < min_diff:
+        min_diff = nums[2] - nums[0]
+if summa_1 % 2 == summa_2 % 2:
+    summa_3 -= min_diff
+print(summa_3)
+
+f = open('files/33199_B.txt')
+N = int(f.readline())
+summa_1 = 0
+summa_2 = 0
+summa_3 = 0
+min_diff = 10 ** 12
+for line in f:
+    nums = [int(x) for x in line.split()]
+    nums.sort()
+    summa_1 += nums[0]
+    summa_2 += nums[1]
+    summa_3 += nums[2]
+    if (nums[2] - nums[1]) % 2 != 0 and nums[2] - nums[1] < min_diff:
+        min_diff = nums[2] - nums[1]
+    elif (nums[2] - nums[0]) % 2 != 0 and nums[2] - nums[0] < min_diff:
+        min_diff = nums[2] - nums[0]
+if summa_1 % 2 == summa_2 % 2:
+    summa_3 -= min_diff
+print(summa_3)
+```
+
+**Ответ:** 541 300229428
+
 [**_РешуЕГЭ - №33529_**](https://inf-ege.sdamgia.ru/problem?id=33529)
+
+```python
+
+```
+
+**Ответ:**
 
 [**_РешуЕГЭ - №35485_**](https://inf-ege.sdamgia.ru/problem?id=35485)
 
+```python
+f = open('files/35485_A.txt')
+N = int(f.readline())
+ost_0 = [0, 0, 0]
+ost_1 = [0, 0, 0]
+ost_2 = [0, 0, 0]
+for line in f:
+    num = int(line)
+    if num % 3 == 0:
+        if num > ost_0[0]:
+            ost_0[2] = ost_0[1]
+            ost_0[1] = ost_0[0]
+            ost_0[0] = num
+        elif num > ost_0[1]:
+            ost_0[2] = ost_0[1]
+            ost_0[1] = num
+        elif num > ost_0[2]:
+            ost_0[2] = num
+    elif num % 3 == 1:
+        if num > ost_1[0]:
+            ost_1[2] = ost_1[1]
+            ost_1[1] = ost_1[0]
+            ost_1[0] = num
+        elif num > ost_1[1]:
+            ost_1[2] = ost_1[1]
+            ost_1[1] = num
+        elif num > ost_1[2]:
+            ost_1[2] = num
+    else:
+        if num > ost_2[0]:
+            ost_2[2] = ost_2[1]
+            ost_2[1] = ost_2[0]
+            ost_2[0] = num
+        elif num > ost_2[1]:
+            ost_2[2] = ost_2[1]
+            ost_2[1] = num
+        elif num > ost_2[2]:
+            ost_2[2] = num
+print(max(sum(ost_0), sum(ost_1), sum(ost_2), ost_0[0] + ost_1[0] + ost_2[0]))
+
+f = open('files/35485_B.txt')
+N = int(f.readline())
+ost_0 = [0, 0, 0]
+ost_1 = [0, 0, 0]
+ost_2 = [0, 0, 0]
+for line in f:
+    num = int(line)
+    if num % 3 == 0:
+        if num > ost_0[0]:
+            ost_0[2] = ost_0[1]
+            ost_0[1] = ost_0[0]
+            ost_0[0] = num
+        elif num > ost_0[1]:
+            ost_0[2] = ost_0[1]
+            ost_0[1] = num
+        elif num > ost_0[2]:
+            ost_0[2] = num
+    elif num % 3 == 1:
+        if num > ost_1[0]:
+            ost_1[2] = ost_1[1]
+            ost_1[1] = ost_1[0]
+            ost_1[0] = num
+        elif num > ost_1[1]:
+            ost_1[2] = ost_1[1]
+            ost_1[1] = num
+        elif num > ost_1[2]:
+            ost_1[2] = num
+    else:
+        if num > ost_2[0]:
+            ost_2[2] = ost_2[1]
+            ost_2[1] = ost_2[0]
+            ost_2[0] = num
+        elif num > ost_2[1]:
+            ost_2[2] = ost_2[1]
+            ost_2[1] = num
+        elif num > ost_2[2]:
+            ost_2[2] = num
+print(max(sum(ost_0), sum(ost_1), sum(ost_2), ost_0[0] + ost_1[0] + ost_2[0]))
+```
+
+**Ответ:** 2697 299986167
+
 [**_РешуЕГЭ - №36001_**](https://inf-ege.sdamgia.ru/problem?id=36001)
+
+```python
+
+```
+
+**Ответ:**
 
 [**_РешуЕГЭ - №37162_**](https://inf-ege.sdamgia.ru/problem?id=37162)
 
+```python
+f = open('files/37162_A.txt')
+N = int(f.readline())
+summa = 0
+max_summa = 0
+counter = 0
+min_counter = 0
+data = {}
+for line in f:
+    num = int(line)
+    summa += num
+    counter += 1
+    if summa % 89 == 0:
+        if summa > max_summa:
+            max_summa = summa
+            min_counter = counter
+        elif summa == max_summa:
+            min_counter = min(counter, min_counter)
+    else:
+        if summa % 89 in data:
+            if summa - data[summa % 89][0] > max_summa:
+                max_summa = summa - data[summa % 89][0]
+                min_counter = counter - data[summa % 89][1]
+            elif summa == max_summa:
+                min_counter = min(counter - data[summa % 89][1], min_counter)
+        else:
+            data[summa % 89] = [summa, counter]
+print(min_counter)
+
+f = open('files/37162_B.txt')
+N = int(f.readline())
+summa = 0
+max_summa = 0
+counter = 0
+min_counter = 0
+data = {}
+for line in f:
+    num = int(line)
+    summa += num
+    counter += 1
+    if summa % 89 == 0:
+        if summa > max_summa:
+            max_summa = summa
+            min_counter = counter
+        elif summa == max_summa:
+            min_counter = min(counter, min_counter)
+    else:
+        if summa % 89 in data:
+            if summa - data[summa % 89][0] > max_summa:
+                max_summa = summa - data[summa % 89][0]
+                min_counter = counter - data[summa % 89][1]
+            elif summa == max_summa:
+                min_counter = min(counter - data[summa % 89][1], min_counter)
+        else:
+            data[summa % 89] = [summa, counter]
+print(min_counter)
+```
+
+**Ответ:** 159 67059
+
 [**_РешуЕГЭ - №38961_**](https://inf-ege.sdamgia.ru/problem?id=38961)
+
+```python
+f = open('files/38961_A.txt')
+N = int(f.readline())
+summa = 0
+max_summa = 0
+counter = 0
+data = {}
+for line in f:
+    num = int(line)
+    summa += num
+    if num % 2 == 0:
+        counter += 1
+    if counter % 10 == 0:
+        max_summa = summa
+    else:
+        if counter % 10 in data:
+            max_summa = max(summa - data[counter % 10], max_summa)
+        else:
+            data[counter % 10] = summa
+print(max_summa)
+
+f = open('files/38961_B.txt')
+N = int(f.readline())
+summa = 0
+max_summa = 0
+counter = 0
+data = {}
+for line in f:
+    num = int(line)
+    summa += num
+    if num % 2 == 0:
+        counter += 1
+    if counter % 10 == 0:
+        max_summa = summa
+    else:
+        if counter % 10 in data:
+            max_summa = max(summa - data[counter % 10], max_summa)
+        else:
+            data[counter % 10] = summa
+print(max_summa)
+```
+
+**Ответ:** 4779554 979258630
 
 [**_РешуЕГЭ - №45261_**](https://inf-ege.sdamgia.ru/problem?id=45261)
 
+```python
+
+```
+
+**Ответ:**
+
 [**_РешуЕГЭ - №46985_**](https://inf-ege.sdamgia.ru/problem?id=46985)
 
+```python
+
+```
+
+**Ответ:**
+
 [**_РешуЕГЭ - №47231_**](https://inf-ege.sdamgia.ru/problem?id=47231)
+
+```python
+
+```
+
+**Ответ:**

@@ -1,4 +1,4 @@
-f = open('files/35998.txt', 'r')
+f = open('files/35998.txt')
 maximum = 0
 for line in f:
     if line.count('A') < 25:

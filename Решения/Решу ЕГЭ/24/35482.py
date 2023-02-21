@@ -1,4 +1,4 @@
-f = open('files/35482.txt', 'r')
+f = open('files/35482.txt')
 minimum = 10 ** 12
 for line in f:
     if line.count('G') < minimum:

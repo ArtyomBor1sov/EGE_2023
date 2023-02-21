@@ -1,4 +1,4 @@
-f = open('files/33769.txt', 'r')
+f = open('files/33769.txt')
 line = f.readline()
 counter = {}
 for i in range(2, len(line)):

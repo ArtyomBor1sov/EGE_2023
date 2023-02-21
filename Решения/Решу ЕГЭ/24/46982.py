@@ -1,4 +1,4 @@
-f = open('files/46982.txt', 'r')
+f = open('files/46982.txt')
 parts = f.readline().split('E')
 counter = 0
 for element in parts:

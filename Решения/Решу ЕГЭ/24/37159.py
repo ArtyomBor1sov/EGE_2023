@@ -1,4 +1,4 @@
-f = open('files/37159.txt', 'r')
+f = open('files/37159.txt')
 line = f.readline()
 line = line.replace('ad', 'a d')
 line = line.replace('da', 'd a')
