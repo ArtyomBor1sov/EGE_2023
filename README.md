@@ -109,7 +109,11 @@ x y z w F
 
 **Ответ:** ywzx
 
-## №3
+## №3 - Поиск информации в реляционных базах данных
+
+### Пример
+
+[**_РешуЕГЭ - №47207_**](https://inf-ege.sdamgia.ru/problem?id=47207)
 
 ## №4 - Кодирование и декодирование информации
 
@@ -380,6 +384,14 @@ print(counter)
 
 ## №9 - Работа с таблицами
 
+### Примеры
+
+[**_РешуЕГЭ - №33088_**](https://inf-ege.sdamgia.ru/problem?id=33088)
+
+[**_РешуЕГЭ - №35898_**](https://inf-ege.sdamgia.ru/problem?id=35898)
+
+[**_РешуЕГЭ - №38943_**](https://inf-ege.sdamgia.ru/problem?id=38943)
+
 ## №11 - Вычисление количества информации
 
 ### Примеры
@@ -532,6 +544,28 @@ print(stroka.count('1'))
 
 ## №15 - Преобразование логических выражений
 
+### Примеры
+
+[**_РешуЕГЭ - №8106_**](https://inf-ege.sdamgia.ru/problem?id=8106)
+
+[**_РешуЕГЭ - №15830_**](https://inf-ege.sdamgia.ru/problem?id=15830)
+
+[**_РешуЕГЭ - №34508_**](https://inf-ege.sdamgia.ru/problem?id=34508)
+
+```python
+for A in range(32):
+    for x in range(32):
+        if not ((x & 29 != 0) <= ((x & 12 == 0) <= (x & A != 0))):
+            break
+    else:
+        print(A)
+        break
+```
+
+**Ответ:** 17
+
+[**_РешуЕГЭ - №34535_**](https://inf-ege.sdamgia.ru/problem?id=34535)
+
 ## №16 - Рекурсивные алгоритмы
 
 ### Пример
@@ -607,6 +641,14 @@ print(counter, maximum)
 **Ответ:** 212587 9972
 
 ## №18 - Робот-сборщик монет
+
+### Примеры
+
+[**_РешуЕГЭ - №27415_**](https://inf-ege.sdamgia.ru/problem?id=27415)
+
+[**_РешуЕГЭ - №33190_**](https://inf-ege.sdamgia.ru/problem?id=33190)
+
+[**_РешуЕГЭ - №33520_**](https://inf-ege.sdamgia.ru/problem?id=33520)
 
 ## №19 - Теория игр. Задание 1
 
@@ -802,6 +844,10 @@ for N in range(10, 100):
 **Ответ:** 14
 
 ## №22 - Многопроцессорные системы
+
+### Пример
+
+[**_РешуЕГЭ - №47616_**](https://inf-ege.sdamgia.ru/problem?id=47616)
 
 ## №23 - Поиск количества программ
 
@@ -1433,9 +1479,9 @@ print(counter, M)
 
 ```python
 def bin_search(element, array, start, end):
-    if begin > end:
+    if start > end:
         return -1
-    mid = (begin + end) // 2
+    mid = (start + end) // 2
     if array[mid] == element:
         return mid
     if array[mid] > element:
@@ -1514,28 +1560,23 @@ print(max_row, min_place)
 [**_РешуЕГЭ - №47023_**](https://inf-ege.sdamgia.ru/problem?id=47023)
 
 ```python
-f = open('files/46984.txt')
+f = open('files/47023.txt')
 N = int(f.readline())
-data = [[False] * 10000 for i in range(10000)]
-data[0][0] = True
+data = []
 for line in f:
-    row, place = [int(x) for x in line.split()]
-    data[row - 1][place - 1] = True
-maximum = 0
-for i in range(10000):
-    counter = 0
-    j = 0
-    while j < 10000:
-        if data[i][j] and (counter == 0 or not data[i][j - 1]):
-            counter += 1
-            if counter > maximum:
-                maximum = counter
-                min_row = i + 1
-            j += 2
-        else:
-            counter = 0
-            j += 1
-print(maximum, min_row)
+    data.append([int(x) for x in line.split()])
+data.sort()
+counter = 1
+maximum = 1
+for i in range(1, len(data)):
+    if data[i][0] == data[i - 1][0] and data[i][1] - data[i - 1][1] == 2:
+        counter += 1
+        if counter > maximum:
+            maximum = counter
+            max_row = data[i][0]
+    elif data[i][0] != data[i - 1][0] or data[i][1] != data[i - 1][1]:
+        counter = 1
+print(maximum, max_row)
 ```
 
 **Ответ:** 9 995
@@ -1699,10 +1740,88 @@ print(summa_3)
 [**_РешуЕГЭ - №33529_**](https://inf-ege.sdamgia.ru/problem?id=33529)
 
 ```python
+f = open('files/33529_A.txt')
+N = int(f.readline())
+summa = 0
+count_chet = 0
+count_nechet = 0
+max_chet_1 = 10 ** 12
+max_chet_2 = 10 ** 12
+max_nechet_1 = 10 ** 12
+max_nechet_2 = 10 ** 12
+for line in f:
+    a, b = sorted([int(x) for x in line.split()])
+    summa += b
+    if b % 2 == 0:
+        count_chet += 1
+        if a % 2 != 0:
+            if b - a < max_chet_1:
+                max_chet_2 = max_chet_1
+                max_chet_1 = b - a
+            elif b - a < max_chet_2:
+                max_chet_2 = b - a
+    else:
+        count_nechet += 1
+        if a % 2 == 0:
+            if b - a < max_nechet_1:
+                max_nechet_2 = max_nechet_1
+                max_nechet_1 = b - a
+            elif b - a < max_nechet_2:
+                max_nechet_2 = b - a
+if summa % 2 == 0 and count_nechet > count_chet:
+    if count_nechet - count_chet > 1:
+        summa -= min(max_chet_1, max_nechet_1)
+    else:
+        summa -= min(max_chet_1, max_nechet_1 + max_nechet_2)
+elif summa % 2 != 0 and count_chet > count_nechet:
+    if count_chet - count_nechet > 1:
+        summa -= min(max_chet_1, max_nechet_1)
+    else:
+        summa -= min(max_chet_1 + max_chet_2, max_nechet_1)
+print(summa)
 
+f = open('files/33529_B.txt')
+N = int(f.readline())
+summa = 0
+count_chet = 0
+count_nechet = 0
+max_chet_1 = 10 ** 12
+max_chet_2 = 10 ** 12
+max_nechet_1 = 10 ** 12
+max_nechet_2 = 10 ** 12
+for line in f:
+    a, b = sorted([int(x) for x in line.split()])
+    summa += b
+    if b % 2 == 0:
+        count_chet += 1
+        if a % 2 != 0:
+            if b - a < max_chet_1:
+                max_chet_2 = max_chet_1
+                max_chet_1 = b - a
+            elif b - a < max_chet_2:
+                max_chet_2 = b - a
+    else:
+        count_nechet += 1
+        if a % 2 == 0:
+            if b - a < max_nechet_1:
+                max_nechet_2 = max_nechet_1
+                max_nechet_1 = b - a
+            elif b - a < max_nechet_2:
+                max_nechet_2 = b - a
+if summa % 2 == 0 and count_nechet > count_chet:
+    if count_nechet - count_chet > 1:
+        summa -= min(max_chet_1, max_nechet_1)
+    else:
+        summa -= min(max_chet_1, max_nechet_1 + max_nechet_2)
+elif summa % 2 != 0 and count_chet > count_nechet:
+    if count_chet - count_nechet > 1:
+        summa -= min(max_chet_1, max_nechet_1)
+    else:
+        summa -= min(max_chet_1 + max_chet_2, max_nechet_1)
+print(summa)
 ```
 
-**Ответ:**
+**Ответ:** 121184 36898658
 
 [**_РешуЕГЭ - №35485_**](https://inf-ege.sdamgia.ru/problem?id=35485)
 
@@ -1791,10 +1910,62 @@ print(max(sum(ost_0), sum(ost_1), sum(ost_2), ost_0[0] + ost_1[0] + ost_2[0]))
 [**_РешуЕГЭ - №36001_**](https://inf-ege.sdamgia.ru/problem?id=36001)
 
 ```python
+f = open('files/36001_A.txt')
+N = int(f.readline())
+sum_max = 0
+sum_min = 0
+CN = 10 ** 12
+NC = 10 ** 12
+NN = 10 ** 12
+for line in f:
+    a, b = [int(x) for x in line.split()]
+    if a % 2 != 0:
+        sum_max += max(a, b)
+        sum_min += min(a, b)
+        if max(a, b) % 2 == 0 and min(a, b) % 2 != 0:
+            CN = min(a + b, CN)
+        elif max(a, b) % 2 != 0 and min(a, b) % 2 == 0:
+            NC = min(a + b, NC)
+        elif max(a, b) % 2 != 0 and min(a, b) % 2 != 0:
+            NN = min(a + b, NN)
+if sum_max % 2 != 0 and sum_min % 2 != 0:
+    print(sum_max + sum_min - min(CN, NN + NC))
+elif sum_max % 2 == 0 and sum_min % 2 == 0:
+    print(sum_max + sum_min - min(NC, NN + CN))
+elif sum_max % 2 == 0 and sum_min % 2 != 0:
+    print(sum_max + sum_min - min(NN, CN + NC))
+else:
+    print(sum_max + sum_min)
 
+f = open('files/36001_B.txt')
+N = int(f.readline())
+sum_max = 0
+sum_min = 0
+CN = 10 ** 12
+NC = 10 ** 12
+NN = 10 ** 12
+for line in f:
+    a, b = [int(x) for x in line.split()]
+    if a % 2 != 0:
+        sum_max += max(a, b)
+        sum_min += min(a, b)
+        if max(a, b) % 2 == 0 and min(a, b) % 2 != 0:
+            CN = min(a + b, CN)
+        elif max(a, b) % 2 != 0 and min(a, b) % 2 == 0:
+            NC = min(a + b, NC)
+        elif max(a, b) % 2 != 0 and min(a, b) % 2 != 0:
+            NN = min(a + b, NN)
+if sum_max % 2 != 0 and sum_min % 2 != 0:
+    print(sum_max + sum_min - min(CN, NN + NC))
+elif sum_max % 2 == 0 and sum_min % 2 == 0:
+    print(sum_max + sum_min - min(NC, NN + CN))
+elif sum_max % 2 == 0 and sum_min % 2 != 0:
+    print(sum_max + sum_min - min(NN, CN + NC))
+else:
+    print(sum_max + sum_min)
 ```
 
-**Ответ:**
+**Ответ:** 44067 301653067
 
 [**_РешуЕГЭ - №37162_**](https://inf-ege.sdamgia.ru/problem?id=37162)
 
@@ -1907,23 +2078,129 @@ print(max_summa)
 [**_РешуЕГЭ - №45261_**](https://inf-ege.sdamgia.ru/problem?id=45261)
 
 ```python
+f = open('files/45261_A.txt')
+N = int(f.readline())
+data = []
+for line in f:
+    data.append(int(line))
+summa = 0
+minus = 0
+plus = 0
+for i in range(N):
+    summa += data[i] * 3 * min(i, N - i)
+    if i < N // 2:
+        minus += data[i]
+    else:
+        plus += data[i]
+minimum = summa
+for i in range(1, N):
+    minus += data[(i + N // 2 - 1) % N]
+    minus -= data[i - 1]
+    plus += data[i - 1]
+    plus -= data[(i + N // 2 - 1) % N]
+    summa += 3 * (plus - minus)
+    minimum = min(summa, minimum)
+print(minimum)
 
+f = open('files/45261_B.txt')
+N = int(f.readline())
+data = []
+for line in f:
+    data.append(int(line))
+summa = 0
+minus = 0
+plus = 0
+for i in range(N):
+    summa += data[i] * 3 * min(i, N - i)
+    if i < N // 2:
+        minus += data[i]
+    else:
+        plus += data[i]
+minimum = summa
+for i in range(1, N):
+    minus += data[(i + N // 2 - 1) % N]
+    minus -= data[i - 1]
+    plus += data[i - 1]
+    plus -= data[(i + N // 2 - 1) % N]
+    summa += 3 * (plus - minus)
+    minimum = min(summa, minimum)
+print(minimum)
 ```
 
-**Ответ:**
+**Ответ:** 471228 49113954961677
 
 [**_РешуЕГЭ - №46985_**](https://inf-ege.sdamgia.ru/problem?id=46985)
 
 ```python
+f = open('files/46985_A.txt')
+N = int(f.readline())
+summa = 0
+counter = 0
+data = {0: 1}
+for line in f:
+    summa += int(line)
+    counter += data.get(summa % 999, 0)
+    data[summa % 999] = data.get(summa % 999, 0) + 1
+print(counter)
 
+f = open('files/46985_B.txt')
+N = int(f.readline())
+summa = 0
+counter = 0
+data = {0: 1}
+for line in f:
+    summa += int(line)
+    counter += data.get(summa % 999, 0)
+    data[summa % 999] = data.get(summa % 999, 0) + 1
+print(counter)
 ```
 
-**Ответ:**
+**Ответ:** 403 1801801220
 
 [**_РешуЕГЭ - №47231_**](https://inf-ege.sdamgia.ru/problem?id=47231)
 
 ```python
+from math import *
 
+f = open('files/47231_A.txt')
+N = int(f.readline())
+data = []
+summa = 0
+left = 0
+right = 0
+for line in f:
+    place, amount = [int(x) for x in line.split()]
+    amount = ceil(amount / 36)
+    data.append([place, amount])
+    summa += amount * (place - data[0][0])
+    right += amount
+minimum = summa
+for i in range(1, N):
+    left += data[i - 1][1]
+    right -= data[i - 1][1]
+    summa += (left - right) * (data[i][0] - data[i - 1][0])
+    minimum = min(summa, minimum)
+print(minimum)
+
+f = open('files/47231_B.txt')
+N = int(f.readline())
+data = []
+summa = 0
+left = 0
+right = 0
+for line in f:
+    place, amount = [int(x) for x in line.split()]
+    amount = ceil(amount / 36)
+    data.append([place, amount])
+    summa += amount * (place - data[0][0])
+    right += amount
+minimum = summa
+for i in range(1, N):
+    left += data[i - 1][1]
+    right -= data[i - 1][1]
+    summa += (left - right) * (data[i][0] - data[i - 1][0])
+    minimum = min(summa, minimum)
+print(minimum)
 ```
 
-**Ответ:**
+**Ответ:** 51063 5634689219329

@@ -1,7 +1,7 @@
 def bin_search(element, array, start, end):
-    if begin > end:
+    if start > end:
         return -1
-    mid = (begin + end) // 2
+    mid = (start + end) // 2
     if array[mid] == element:
         return mid
     if array[mid] > element:
