@@ -439,12 +439,6 @@ print(counter)
 
 [**_РешуЕГЭ - №33088_**](https://inf-ege.sdamgia.ru/problem?id=33088)
 
-
-
-[**_РешуЕГЭ - №35898_**](https://inf-ege.sdamgia.ru/problem?id=35898)
-
-
-
 [**_РешуЕГЭ - №38943_**](https://inf-ege.sdamgia.ru/problem?id=38943)
 
 https://user-images.githubusercontent.com/99151010/222609456-ff929068-d93a-4282-a78e-13abde4a3e46.mp4
