@@ -439,9 +439,15 @@ print(counter)
 
 [**_РешуЕГЭ - №33088_**](https://inf-ege.sdamgia.ru/problem?id=33088)
 
+
+
 [**_РешуЕГЭ - №35898_**](https://inf-ege.sdamgia.ru/problem?id=35898)
 
+
+
 [**_РешуЕГЭ - №38943_**](https://inf-ege.sdamgia.ru/problem?id=38943)
+
+https://user-images.githubusercontent.com/99151010/222609456-ff929068-d93a-4282-a78e-13abde4a3e46.mp4
 
 <a name="task-11"></a>
 
@@ -713,9 +719,15 @@ print(counter, maximum)
 
 [**_РешуЕГЭ - №27415_**](https://inf-ege.sdamgia.ru/problem?id=27415)
 
+https://user-images.githubusercontent.com/99151010/222609527-a0911e1a-8fdc-420b-9f51-857ef1989336.mp4
+
 [**_РешуЕГЭ - №33190_**](https://inf-ege.sdamgia.ru/problem?id=33190)
 
+https://user-images.githubusercontent.com/99151010/222609767-e111c284-1a6d-4088-9093-5edb7de73bd5.mp4
+
 [**_РешуЕГЭ - №33520_**](https://inf-ege.sdamgia.ru/problem?id=33520)
+
+https://user-images.githubusercontent.com/99151010/222609789-63c57a8f-0443-4b19-9e65-f8a207216496.mp4
 
 <a name="task-19"></a>
 
@@ -923,6 +935,8 @@ for N in range(10, 100):
 ### Пример
 
 [**_РешуЕГЭ - №47616_**](https://inf-ege.sdamgia.ru/problem?id=47616)
+
+https://user-images.githubusercontent.com/99151010/222609716-5f2412de-cc65-47b4-bd44-0ed5845a3ba3.mp4
 
 <a name="task-23"></a>
 
