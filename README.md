@@ -439,6 +439,9 @@ print(counter)
 
 [**_РешуЕГЭ - №33088_**](https://inf-ege.sdamgia.ru/problem?id=33088)
 
+https://user-images.githubusercontent.com/99151010/222611605-48da7b83-3bb3-4aa4-b01e-2c65ba86c597.mp4
+
+
 [**_РешуЕГЭ - №38943_**](https://inf-ege.sdamgia.ru/problem?id=38943)
 
 https://user-images.githubusercontent.com/99151010/222609456-ff929068-d93a-4282-a78e-13abde4a3e46.mp4
@@ -715,13 +718,16 @@ print(counter, maximum)
 
 https://user-images.githubusercontent.com/99151010/222609527-a0911e1a-8fdc-420b-9f51-857ef1989336.mp4
 
+
 [**_РешуЕГЭ - №33190_**](https://inf-ege.sdamgia.ru/problem?id=33190)
 
 https://user-images.githubusercontent.com/99151010/222609767-e111c284-1a6d-4088-9093-5edb7de73bd5.mp4
 
+
 [**_РешуЕГЭ - №33520_**](https://inf-ege.sdamgia.ru/problem?id=33520)
 
 https://user-images.githubusercontent.com/99151010/222609789-63c57a8f-0443-4b19-9e65-f8a207216496.mp4
+
 
 <a name="task-19"></a>
 
