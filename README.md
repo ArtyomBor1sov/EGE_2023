@@ -154,6 +154,8 @@ x y z w F
 
 https://user-images.githubusercontent.com/99151010/222596567-11df13f6-886a-4e30-80e5-c139101ee6b4.mp4
 
+**Ответ:** 241080
+
 <a name="task-4"></a>
 
 ## №4 - Кодирование и декодирование информации
@@ -439,11 +441,15 @@ print(counter)
 
 [**_РешуЕГЭ - №33088_**](https://inf-ege.sdamgia.ru/problem?id=33088)
 
-https://user-images.githubusercontent.com/99151010/222611605-48da7b83-3bb3-4aa4-b01e-2c65ba86c597.mp4  
+https://user-images.githubusercontent.com/99151010/222611605-48da7b83-3bb3-4aa4-b01e-2c65ba86c597.mp4
+
+**Ответ:** 6
 
 [**_РешуЕГЭ - №38943_**](https://inf-ege.sdamgia.ru/problem?id=38943)
 
-https://user-images.githubusercontent.com/99151010/222609456-ff929068-d93a-4282-a78e-13abde4a3e46.mp4  
+https://user-images.githubusercontent.com/99151010/222609456-ff929068-d93a-4282-a78e-13abde4a3e46.mp4
+
+**Ответ:** 1074
 
 <a name="task-11"></a>
 
@@ -611,7 +617,15 @@ print(stroka.count('1'))
 
 [**_РешуЕГЭ - №8106_**](https://inf-ege.sdamgia.ru/problem?id=8106)
 
+![**_РешуЕГЭ - №8106 - Решение_**](media/15_01.jpg)
+
+**Ответ:** 12
+
 [**_РешуЕГЭ - №15830_**](https://inf-ege.sdamgia.ru/problem?id=15830)
+
+![**_РешуЕГЭ - №15830 - Решение_**](media/15_02.jpg)
+
+**Ответ:** 16
 
 [**_РешуЕГЭ - №34508_**](https://inf-ege.sdamgia.ru/problem?id=34508)
 
@@ -628,6 +642,10 @@ for A in range(32):
 **Ответ:** 17
 
 [**_РешуЕГЭ - №34535_**](https://inf-ege.sdamgia.ru/problem?id=34535)
+
+![**_РешуЕГЭ - №34535 - Решение_**](media/15_03.jpg)
+
+**Ответ:** 5
 
 <a name="task-16"></a>
 
@@ -715,15 +733,21 @@ print(counter, maximum)
 
 [**_РешуЕГЭ - №27415_**](https://inf-ege.sdamgia.ru/problem?id=27415)
 
-https://user-images.githubusercontent.com/99151010/222609527-a0911e1a-8fdc-420b-9f51-857ef1989336.mp4  
+https://user-images.githubusercontent.com/99151010/222609527-a0911e1a-8fdc-420b-9f51-857ef1989336.mp4
+
+**Ответ:** 1204502
 
 [**_РешуЕГЭ - №33190_**](https://inf-ege.sdamgia.ru/problem?id=33190)
 
-https://user-images.githubusercontent.com/99151010/222609767-e111c284-1a6d-4088-9093-5edb7de73bd5.mp4  
+https://user-images.githubusercontent.com/99151010/222609767-e111c284-1a6d-4088-9093-5edb7de73bd5.mp4
+
+**Ответ:** 80
 
 [**_РешуЕГЭ - №33520_**](https://inf-ege.sdamgia.ru/problem?id=33520)
 
 https://user-images.githubusercontent.com/99151010/222609789-63c57a8f-0443-4b19-9e65-f8a207216496.mp4
+
+**Ответ:** 323
 
 <a name="task-19"></a>
 
@@ -933,6 +957,8 @@ for N in range(10, 100):
 [**_РешуЕГЭ - №47616_**](https://inf-ege.sdamgia.ru/problem?id=47616)
 
 https://user-images.githubusercontent.com/99151010/222609716-5f2412de-cc65-47b4-bd44-0ed5845a3ba3.mp4
+
+**Ответ:** 54
 
 <a name="task-23"></a>
 
