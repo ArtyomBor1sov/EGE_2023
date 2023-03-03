@@ -152,7 +152,7 @@ x y z w F
 
 [**_РешуЕГЭ - №38937_**](https://inf-ege.sdamgia.ru/problem?id=38937)
 
-<video src="media/03_01.mp4"></video>
+https://user-images.githubusercontent.com/99151010/222596567-11df13f6-886a-4e30-80e5-c139101ee6b4.mp4
 
 <a name="task-4"></a>
 
